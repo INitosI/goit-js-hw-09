@@ -29,6 +29,15 @@ form.addEventListener('input', event => {
 form.addEventListener('submit', event => {
   event.preventDefault(); //відміняємо стандартну поведінку форми
 
+  if (!formData.email || !formData.message) {
+    alert('Fill please all fields!');
+    return;
+  }
+
+  console.log(formData); //виводимо об'єкт formData у консоль
+  console.log(formData.email);
+  console.log(formData.message);
+
   localStorage.removeItem(STORAGE_KEY); //видаляємо збережені дані з локалсторедж
 
   formData.email = '';
